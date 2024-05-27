@@ -1,4 +1,4 @@
-interface VerifyKeyResponse {
+export interface VerifyKeyResponse {
   valid: boolean;
   keyId: string;
   ownerId: string;

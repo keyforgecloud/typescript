@@ -53,8 +53,8 @@ const createAndVerify = async () => {
 [build-url]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml
 [downloads-img]:https://img.shields.io/npm/dt/keyforge
 [downloads-url]:https://www.npmtrends.com/keyforgecloud/lib
-[npm-img]:https://img.shields.io/npm/v/keyforge
-[npm-url]:https://www.npmjs.com/package/keyforge
+[npm-img]:https://img.shields.io/npm/v/@keyforgecloud/lib
+[npm-url]:https://www.npmjs.com/package/@keyforgecloud/lib
 [issues-img]:https://img.shields.io/github/issues/keyforgecloud/typescript
 [issues-url]:https://github.com/keyforgecloud/typescript/issues
 [codecov-img]:https://codecov.io/gh/keyforgecloud/typescript/branch/main/graph/badge.svg
