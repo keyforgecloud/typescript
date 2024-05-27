@@ -13,13 +13,13 @@
 ## Install
 
 ```bash
-npm install keyforge
+npm install @keyforgecloud/lib
 ```
 
 ## Usage
 
 ```ts
-import { myPackage } from 'keyforge';
+import { myPackage } from '@keyforgecloud/lib';
 
 myPackage('hello');
 //=> 'hello from my package'
@@ -49,7 +49,7 @@ Lorem ipsum.
 [build-img]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml
 [downloads-img]:https://img.shields.io/npm/dt/keyforge
-[downloads-url]:https://www.npmtrends.com/keyforge
+[downloads-url]:https://www.npmtrends.com/keyforgecloud/lib
 [npm-img]:https://img.shields.io/npm/v/keyforge
 [npm-url]:https://www.npmjs.com/package/keyforge
 [issues-img]:https://img.shields.io/github/issues/keyforgecloud/typescript
