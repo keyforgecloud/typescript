@@ -49,15 +49,14 @@
   ],
   "homepage": "https://github.com/keyforgecloud/typescript#readme",
   "keywords": [
-    "boilerplate",
-    "template",
+    "keyforge",
+    "keyforgecloud",
     "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "sdk",
+    "auth",
+    "api-keys",
+    "api",
+    "keyforge-api"
   ],
   "license": "MIT",
   "lint-staged": {
