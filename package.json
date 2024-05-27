@@ -1,6 +1,6 @@
 {
   "name": "@keyforgecloud/lib",
-  "version": "0.0.1-snapshot",
+  "version": "1.0.2",
   "description": "The Typescript SDK for the Keyforge API",
   "main": "./lib/index.js",
   "files": [
