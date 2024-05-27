@@ -110,14 +110,14 @@ class KeyforgeAPI {
       });
   }
 
-  public static async verifyKey(keyId: string, apiId: string | null = KeyforgeAPI.apiId): Promise<VerifyKeyResponse> {
+  public static async verifyKey(token: string, apiId: string | null = KeyforgeAPI.apiId): Promise<VerifyKeyResponse> {
     if (!apiId) {
       throw new Error('API ID is not specified.');
     }
 
     return await KeyforgeAPI.getAxios().post(`/verify`, {
       apiId,
-      keyId,
+      token,
     })
       .then(response => response.data)
       .catch(error => {

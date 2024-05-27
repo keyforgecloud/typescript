@@ -8,7 +8,7 @@
 [![Commitizen Friendly][commitizen-img]][commitizen-url]
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 
-> My awesome module
+> The official Keyforge API client library for Javascript and Typescript.
 
 ## Install
 
@@ -18,33 +18,36 @@ npm install @keyforgecloud/lib
 
 ## Usage
 
-```ts
-import { myPackage } from '@keyforgecloud/lib';
+```typescript
+import KeyforgeAPI from '@keyforgecloud/lib';
 
-myPackage('hello');
-//=> 'hello from my package'
+const createAndVerify = async () => {
+  KeyforgeAPI.setCredentials({
+    accountToken: "your-account-token",
+    apiId: "your-api-id" // This can be specified later as a function parameter
+  });
+
+  const key = await KeyforgeAPI.createKey({
+    name: 'My Key',
+    ownerId: 'user_abc123',
+    permissions: ['read', 'write'],
+    metadata: {
+      "key": "value"
+    }
+  });
+
+  const verification = await KeyforgeAPI.verifyKey(key.token)
+    .then(() => true)
+    .catch(() => false);
+
+  if (verification) {
+    console.log('Key verified successfully');
+  } else {
+    console.log('Key verification failed');
+  }
+};
 ```
 
-## API
-
-### myPackage(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`
-Default: `rainbows`
-
-Lorem ipsum.
 
 [build-img]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml

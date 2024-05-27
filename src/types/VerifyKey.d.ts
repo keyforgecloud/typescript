@@ -3,5 +3,5 @@ interface VerifyKeyResponse {
   keyId: string;
   ownerId: string;
   permissions: string[];
-  meta: Record<string, any>;
+  metadata: Record<string, any>;
 }

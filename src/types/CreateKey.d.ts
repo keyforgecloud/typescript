@@ -1,11 +1,11 @@
 ﻿export interface CreateKeyResponse {
   keyId: string;
-  key: string;
+  token: string;
 }
 
 export interface CreateKeyRequestBody {
   ownerId?: string;
   name?: string;
   permissions?: string[];
-  meta?: Record<string, any>;
+  metadata?: Record<string, any>;
 }
