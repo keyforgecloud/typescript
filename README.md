@@ -7,10 +7,10 @@ Inspired by [node-module-boilerplate](https://github.com/sindresorhus/node-modul
 ## Features
 
 - [Semantic Release](https://github.com/semantic-release/semantic-release)
-- [Issue Templates](https://github.com$GITHUB_USER/typescript/tree/main/.github/ISSUE_TEMPLATE)
-- [GitHub Actions](https://github.com$GITHUB_USER/typescript/tree/main/.github/workflows)
+- [Issue Templates](https://github.com/keyforgecloud/typescript/tree/main/.github/ISSUE_TEMPLATE)
+- [GitHub Actions](https://github.com/keyforgecloud/typescript/tree/main/.github/workflows)
 - [Codecov](https://about.codecov.io/)
-- [VSCode Launch Configurations](https://github.com$GITHUB_USER/typescript/blob/main/.vscode/launch.json)
+- [VSCode Launch Configurations](https://github.com/keyforgecloud/typescript/blob/main/.vscode/launch.json)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Husky](https://github.com/typicode/husky)
 - [Lint Staged](https://github.com/okonet/lint-staged)
@@ -28,7 +28,7 @@ Inspired by [node-module-boilerplate](https://github.com/sindresorhus/node-modul
 Alternatively, create a new directory and then run:
 
 ```bash
-curl -fsSL https://github.com$GITHUB_USER/typescript/archive/main.tar.gz | tar -xz --strip-components=1
+curl -fsSL https://github.com/keyforgecloud/typescript/archive/main.tar.gz | tar -xz --strip-components=1
 ```
 
 Replace `FULL_NAME`, `GITHUB_USER`, and `REPO_NAME` in the script below with your own details to personalize your new package:
@@ -37,7 +37,7 @@ Replace `FULL_NAME`, `GITHUB_USER`, and `REPO_NAME` in the script below with you
 FULL_NAME="Keyforge Cloud"
 GITHUB_USER="keyforgecloud"
 REPO_NAME="typescript"
-sed -i.mybak "s/\([\/\"]\)(ryansonshine)/$GITHUB_USER/g; s/typescript\|typescript/$REPO_NAME/g; s/Keyforge Cloud/$FULL_NAME/g" package.json package-lock.json README.md
+sed -i.mybak "s/\([\/\"]\)(ryansonshine)//keyforgecloud/g; s/typescript\|typescript/$REPO_NAME/g; s/Keyforge Cloud/$FULL_NAME/g" package.json package-lock.json README.md
 rm *.mybak
 ```
 
@@ -68,13 +68,13 @@ Enable the Codecov GitHub App [here](https://github.com/apps/codecov).
 ## Install
 
 ```bash
-npm install typescript
+npm install keyforge
 ```
 
 ## Usage
 
 ```ts
-import { myPackage } from 'typescript';
+import { myPackage } from 'keyforge';
 
 myPackage('hello');
 //=> 'hello from my package'
@@ -101,16 +101,16 @@ Default: `rainbows`
 
 Lorem ipsum.
 
-[build-img]:https://github.com$GITHUB_USER/typescript/actions/workflows/release.yml/badge.svg
-[build-url]:https://github.com$GITHUB_USER/typescript/actions/workflows/release.yml
-[downloads-img]:https://img.shields.io/npm/dt/typescript
-[downloads-url]:https://www.npmtrends.com/typescript
-[npm-img]:https://img.shields.io/npm/v/typescript
-[npm-url]:https://www.npmjs.com/package/typescript
-[issues-img]:https://img.shields.io/github/issues$GITHUB_USER/typescript
-[issues-url]:https://github.com$GITHUB_USER/typescript/issues
-[codecov-img]:https://codecov.io/gh$GITHUB_USER/typescript/branch/main/graph/badge.svg
-[codecov-url]:https://codecov.io/gh$GITHUB_USER/typescript
+[build-img]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml/badge.svg
+[build-url]:https://github.com/keyforgecloud/typescript/actions/workflows/release.yml
+[downloads-img]:https://img.shields.io/npm/dt/keyforge
+[downloads-url]:https://www.npmtrends.com/keyforge
+[npm-img]:https://img.shields.io/npm/v/keyforge
+[npm-url]:https://www.npmjs.com/package/keyforge
+[issues-img]:https://img.shields.io/github/issues/keyforgecloud/typescript
+[issues-url]:https://github.com/keyforgecloud/typescript/issues
+[codecov-img]:https://codecov.io/gh/keyforgecloud/typescript/branch/main/graph/badge.svg
+[codecov-url]:https://codecov.io/gh/keyforgecloud/typescript
 [semantic-release-img]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]:https://github.com/semantic-release/semantic-release
 [commitizen-img]:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg

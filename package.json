@@ -42,9 +42,9 @@
     "codecov"
   ],
   "bugs": {
-    "url": "https://github.com$GITHUB_USER/typescript/issues"
+    "url": "https://github.com/keyforgecloud/typescript/issues"
   },
-  "homepage": "https://github.com$GITHUB_USER/typescript#readme",
+  "homepage": "https://github.com/keyforgecloud/typescript#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
