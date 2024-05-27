@@ -1,8 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 import { GetAPIsResponse } from './types/getAPIs';
+import { GetAPIResponse } from './types/GetAPI';
 
 class KeyforgeAPI {
-  private static apiKey: string | null = null;
+  private static apiId: string | null = null;
   private static accountToken: string | null = null;
   static baseURL = 'https://api.keyforge.cloud/v0/';
 
@@ -16,13 +17,13 @@ class KeyforgeAPI {
     });
   }
 
-  public static setCredentials(apiKey: string, accountToken?: string): void {
-    KeyforgeAPI.apiKey = apiKey;
+  public static setCredentials(apiId: string, accountToken?: string): void {
+    KeyforgeAPI.apiId = apiId;
     KeyforgeAPI.accountToken = accountToken || null;
   }
 
   public static async getAPIs(page = 1, pageSize = 50): Promise<GetAPIsResponse> {
-    const response = await KeyforgeAPI.getAxios().get('/apis', {
+    return await KeyforgeAPI.getAxios().get('/apis', {
       params: {
         page,
         pageSize,
@@ -30,12 +31,18 @@ class KeyforgeAPI {
     })
       .then(response => response.data as GetAPIsResponse)
       .catch(error => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         throw new Error(JSON.stringify(error.response.data));
       });
-
-    return response;
   }
+
+  public static async getAPI(apiId: string): Promise<GetAPIResponse> {
+    return await KeyforgeAPI.getAxios().get(`/apis/${apiId}`)
+      .then(response => response.data)
+      .catch(error => {
+        throw new Error(JSON.stringify(error.response.data));
+      });
+  }
+
 }
 
 export default KeyforgeAPI;
