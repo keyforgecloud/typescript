@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import { GetAPIsResponse } from './types/getAPIs';
 import { GetAPIResponse } from './types/GetAPI';
+import { DeleteAPIResponse } from './types/DeleteAPI';
 
 class KeyforgeAPI {
   private static apiId: string | null = null;
@@ -47,6 +48,14 @@ class KeyforgeAPI {
     return await KeyforgeAPI.getAxios().post('/apis', {
       name,
     })
+      .then(response => response.data)
+      .catch(error => {
+        throw new Error(JSON.stringify(error.response.data));
+      });
+  }
+
+  public static async deleteAPI(apiId: string): Promise<DeleteAPIResponse> {
+    return await KeyforgeAPI.getAxios().delete(`/apis/${apiId}`)
       .then(response => response.data)
       .catch(error => {
         throw new Error(JSON.stringify(error.response.data));
