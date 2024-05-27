@@ -13,12 +13,12 @@ class KeyforgeAPI {
   static baseURL = 'https://api.keyforge.cloud/v0/';
   static apiId: string | null = null;
 
-  private static getAxiosInstance(accountToken: string): AxiosInstance {
+  private static getAxiosInstance(accountToken?: string): AxiosInstance {
     return axios.create({
       baseURL: KeyforgeAPI.baseURL,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: accountToken,
+        Authorization: accountToken ? accountToken : '',
       },
     });
   }
@@ -40,11 +40,7 @@ class KeyforgeAPI {
   ): Promise<T> {
     const accountToken = credentials?.accountToken || KeyforgeAPI.accountToken;
 
-    if (!accountToken) {
-      throw new Error('No account token provided.');
-    }
-
-    const axiosInstance = KeyforgeAPI.getAxiosInstance(accountToken);
+    const axiosInstance = KeyforgeAPI.getAxiosInstance(accountToken || undefined);
 
     try {
       const response = await axiosInstance[method](endpoint, data, { params });

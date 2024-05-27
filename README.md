@@ -22,10 +22,8 @@ npm install @keyforgecloud/lib
 import KeyforgeAPI from '@keyforgecloud/lib';
 
 const createAndVerify = async () => {
-  KeyforgeAPI.setCredentials({
-    accountToken: "your-account-token",
-    apiId: "your-api-id" // This can be specified later as a function parameter
-  });
+  KeyforgeAPI.setAccountToken("your-account-token")
+  KeyforgeAPI.setDefaultAPI("your-api-id")
 
   const key = await KeyforgeAPI.createKey({
     name: 'My Key',
@@ -34,7 +32,7 @@ const createAndVerify = async () => {
     metadata: {
       "key": "value"
     }
-  });
+  }, 'your-api-id'); // API ID is optional if set a default (KeyforgeAPI.setDefaultAPI)
 
   const verification = await KeyforgeAPI.verifyKey(key.token)
     .then(() => true)
@@ -46,6 +44,8 @@ const createAndVerify = async () => {
     console.log('Key verification failed');
   }
 };
+
+createAndVerify();
 ```
 
 
