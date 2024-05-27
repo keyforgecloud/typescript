@@ -1,6 +1,6 @@
 {
   "name": "@keyforgecloud/lib",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "author": {
     "name": "Keyforge Cloud",
     "email": "hello@flyte.gg",
@@ -16,6 +16,7 @@
     }
   },
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
