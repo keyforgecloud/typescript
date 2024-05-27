@@ -43,6 +43,18 @@ class KeyforgeAPI {
       });
   }
 
+  public static async createAPI(name: string): Promise<GetAPIResponse> {
+    return await KeyforgeAPI.getAxios().post('/apis', {
+      name,
+    })
+      .then(response => response.data)
+      .catch(error => {
+        throw new Error(JSON.stringify(error.response.data));
+      });
+  }
+
+
+
 }
 
 export default KeyforgeAPI;
