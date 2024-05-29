@@ -6,7 +6,7 @@
   apiOwnerId: string;
   apiId: string;
   permissions: string[];
-  meta: Record<string, any>;
+  metadata: Record<string, any>;
   lastUsed: string;
   createdAt: string;
 }

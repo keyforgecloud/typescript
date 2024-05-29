@@ -79,6 +79,13 @@ class KeyforgeAPI {
     return await KeyforgeAPI.request<CreateKeyResponse>('post', `/apis/${apiId}/keys`, keyData, undefined, credentials);
   }
 
+  public static async getKey(keyId: string, apiId: string | null = KeyforgeAPI.apiId!, credentials?: Credentials): Promise<CreateKeyResponse> {
+    if (!apiId) {
+      throw new Error('API ID is not specified.');
+    }
+    return await KeyforgeAPI.request<CreateKeyResponse>('get', `/apis/${apiId}/keys/${keyId}`, undefined, undefined, credentials);
+  }
+
   public static async getKeys(page = 1, pageSize = 10, apiId: string | null = KeyforgeAPI.apiId!, credentials?: Credentials): Promise<GetKeysResponse> {
     if (!apiId) {
       throw new Error('API ID is not specified.');
