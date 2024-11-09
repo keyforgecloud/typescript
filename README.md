@@ -9,7 +9,6 @@
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 
 > The official Keyforge API client library for Javascript and Typescript.
-
 ## Install
 
 ```bash
